@@ -23,10 +23,16 @@ const saveUserPoint = (point) => {
 };
 
 const fetchData = async () => {
-  const response = await fetch(URL);
-  const json = await response.json();
-  formatedData = formatData(json.results);
-  start();
+  try {
+    const response = await fetch(URL);
+    const json = await response.json();
+    formatedData = formatData(json.results);
+    start();
+  } catch (error) {
+    if (error) {
+      window.location.reload();
+    }
+  }
 };
 
 const start = () => {
@@ -65,9 +71,8 @@ const nextHandler = () => {
   questionNumberText.innerText = questionNumber;
   if (questionIndex === formatedData.length) {
     score = 0;
-    if (score === formatData.length) {
-      window.location.assign("../html/end.html");
-    }
+    saveUserPoint(score);
+    window.location.assign("../html/end.html");
   } else {
     showQuestion();
   }
