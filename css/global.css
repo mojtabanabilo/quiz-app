@@ -1,0 +1,23 @@
+/* variables */
+:root {
+  --lightColor: #6757d9;
+  --bgColor: #dddddd;
+  --darkTextColor: #1f1f1f;
+  --lightTextColor: #f3f3f3;
+}
+
+/* default config */
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
