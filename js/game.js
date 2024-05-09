@@ -20,7 +20,7 @@ let isAccepted = true;
 
 const saveUserPoint = (point) => {
   localStorage.setItem("user-point", point);
-}
+};
 
 const fetchData = async () => {
   const response = await fetch(URL);
@@ -65,7 +65,9 @@ const nextHandler = () => {
   questionNumberText.innerText = questionNumber;
   if (questionIndex === formatedData.length) {
     score = 0;
-    window.location.assign("../html/end.html");
+    if (score === formatData.length) {
+      window.location.assign("../html/end.html");
+    }
   } else {
     showQuestion();
   }
