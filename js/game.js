@@ -71,7 +71,7 @@ const nextHandler = () => {
   questionNumberText.innerText = questionNumber;
   if (questionIndex === formatedData.length) {
     score = 0;
-    saveUserPoint(score);
+    saveUserPoint(scoreText.innerText);
     window.location.assign("../html/end.html");
   } else {
     showQuestion();
