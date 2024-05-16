@@ -1,4 +1,4 @@
-import { formatData } from "./helper.js";
+import { formatData, saveLocalStorage } from "./helper.js";
 
 const loader = document.getElementById("loader");
 const container = document.getElementById("container");
@@ -17,10 +17,6 @@ let questionNumber = 1;
 let correctAnswer = null;
 let score = 0;
 let isAccepted = true;
-
-const saveUserPoint = (point) => {
-  localStorage.setItem("user-point", point);
-};
 
 const fetchData = async () => {
   try {
@@ -71,7 +67,7 @@ const nextHandler = () => {
   questionNumberText.innerText = questionNumber;
   if (questionIndex === formatedData.length) {
     score = 0;
-    saveUserPoint(scoreText.innerText);
+    saveLocalStorage("user-point", scoreText.innerText);
     window.location.assign("../html/end.html");
   } else {
     showQuestion();
@@ -80,7 +76,7 @@ const nextHandler = () => {
 
 const finishHandler = () => {
   window.location.assign("../html/end.html");
-  saveUserPoint(score);
+  saveLocalStorage("user-point", score);
 };
 
 window.addEventListener("load", fetchData);

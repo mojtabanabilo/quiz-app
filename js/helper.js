@@ -11,4 +11,8 @@ const formatData = (questionData) => {
   return result;
 };
 
-export { formatData };
+const saveLocalStorage = (key, value) => {
+  localStorage.setItem(key, value);
+};
+
+export { formatData, saveLocalStorage };
