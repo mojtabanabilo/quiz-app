@@ -1,0 +1,46 @@
+h3 {
+  font-size: 2.2rem;
+  color: var(--lightColor);
+  margin: 40px 0;
+}
+
+button {
+  background: var(--bgColor);
+  border: none;
+  border-radius: 20px;
+  width: 300px;
+  padding: 15px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  text-align: center;
+  transition: all 0.2s ease-in;
+}
+
+a {
+  border-radius: 20px;
+  padding: 15px;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  text-align: center;
+  text-decoration: none;
+  color: var(--lightColor);
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+
+button:hover,
+a:hover {
+  background: var(--lightColor);
+  color: var(--lightTextColor);
+}
+
+@media (max-width: 540px) {
+    h3{
+        font-size: 1.8rem;
+        text-align: center;
+    }
+    button{
+        width: 90%;
+    }
+}
